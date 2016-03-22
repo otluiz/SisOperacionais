@@ -1,0 +1,184 @@
+\documentclass[11pt]{beamer}
+\usetheme{Warsaw}
+\usepackage[utf8]{inputenc}
+\usepackage[brazil]{babel}  % idioma
+\usepackage{amsmath,amsfonts,amssymb,textcomp}
+\usepackage{graphicx}
+\usepackage{subfigure}
+
+\usepackage[lined]{algorithm2e}
+
+% Configurando layout para mostrar codigos C++
+\usepackage{listings}
+%\usepackage{minted}
+%pdflatex -shell-escape minted01.tex
+%ou
+%latexmk -pdf -shell-escape minted01.tex
+
+\author{Othon Oliveira}
+\title{Sistemas Operacionais}
+%\setbeamercovered{transparent} 
+%\setbeamertemplate{navigation symbols}{} 
+%\logo{} 
+\institute{Fatec -- Faculdade de Informática --- PE} 
+%\date{} 
+%\subject{} 
+\begin{document}
+
+
+% Capa - requer o TikZ
+\newcommand{\capa}{
+    \begin{tikzpicture}[remember picture,overlay]
+        \node at (current page.south west)
+            {\begin{tikzpicture}[remember picture, overlay]
+                \fill[shading=radial,top color=orange,bottom color=orange,middle color=yellow] (0,0) rectangle (\paperwidth,\paperheight);
+            \end{tikzpicture}
+          };
+    \end{tikzpicture}
+}
+
+
+
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}
+\tableofcontents
+\end{frame}
+
+
+
+%+++++++++++++++++++++++++++++++++++++++++++++++
+\section{ Semáforos}
+\subsection*{ E. W. Dijkstra (1965)}
+
+\begin{frame}\frametitle{ Contando os sinais de ``acordar''}
+ Dijkstra sugeriu uma variável inteira para contar o número de sinais de acordar salvos, para uso futuro.
+ 
+\pause
+\begin{block}{ Semáforos}
+  Essa proposta introduziu uma nova variável chamada de \textbf{semáforos}. Um semáforo poderia conter o valor 0, indicando que nenhum sinal 
+  de acordar foi salvo -- ou algum valor positivo se um sinal de acordar estivessem pendentes.
+\end{block}
+ 
+ \pause
+\begin{block}{ Up e Down}
+ Dijkstra propôs a existência de duas operações, \textit{down} e \textit{up} (generalização de sleep e wakeup respectivamente). 
+\end{block}
+ 
+\end{frame}
+
+
+%--------------------------------------------------------
+\begin{frame}\frametitle{ Ações sobre semáforos}
+
+\begin{block}{ Operações de semáforos}
+  A operação \textit{down} sobre um semáforo verifica se seu valor é maior que 0, se for decresce de 1 
+  (equivale a dizer que ``gasta'' um sinal de acordar armazenado) e prosseguirá, caso seja 0 o processo será posto pra dormir.
+\end{block}
+
+\pause
+\begin{block}{ Ações atômicas}
+  Todas essas tarefas são atômicas, ou seja indivisíveis. Garante que, uma vez iniciada uma operação de semáforo, nenhum 
+  outro processo pode ter acesso ao semáforo até que a operação seja terminada ou bloqueada.
+\end{block}
+
+\pause
+  Essas ações atômicas são absolutamente essenciais para resolver o problema da sincronização e evitar condições de disputa.
+
+\end{frame}
+
+
+%--------------------------------------------------------
+\begin{frame}\frametitle{ Ações sobre semáforos}
+
+\begin{block}{ Ações \textit{up} e \textit{down}}
+  A operação \textit{up} incrementa o valor de um semáforo. Se um ou mais processos estiverem dormindo naquele semáforo, 
+  incapacitados de terminar um operação \textit{down} anterior, um deles seria escolhido pelo sistema (ex: aleatoriamente) 
+  e seria dada permissão para executar seu \textit{down}.
+\end{block}
+
+\pause
+\begin{block}{ Indivisibilidade}
+  A operação de incrementar o semáforo e acordar um processo é também indivisível. 
+  Nunca um processo é bloqueado a partir de um \textit{up} (princípio 3 das condições de disputa)
+\end{block}
+\end{frame}
+
+
+%+++++++++++++++++++++++++++++++++++++++++++++++
+\subsection*{ O algoritmo produtor--concumidor com semáforos}
+\begin{frame}\frametitle{ O problema da perda do sinal de ``acordar''}
+
+\begin{block}{ Indivisibilidade}
+ É fundamental que seja inplementada de maneira indivisível, diferentemente do modo normal baseado em \textit{up} e \textit{down}, onde 
+ o sistema operacional desabilita suas interrupções, pondo-o para dormir, enquanto estiver testando o semáforo.
+\end{block}
+
+\pause
+\begin{block}{ O algoritmo em C}
+   \begin{algorithm}[H]
+    \#define N 100		/* número lugares no buffer */ \\
+    typedef int semaphore;	/* semáforos são um tipo especial de int */ \\
+    semaphore mutex = 1;	/* controla o acesso à região crítica */\\
+    semaphore empty = N;	/* conta os lugares vazios no buffer */\\
+    semaphore full = 0;		/* conta os lugares preenchidos no buffer */\\
+   ...
+  \end{algorithm}
+\end{block}
+
+\end{frame}
+
+
+%------------------------------------------------
+\begin{frame}{ Implementando o código do produtor}
+ 
+ \begin{block}{ Continuação, o produtor ...}
+   \begin{algorithm}[H]    
+    void producer(void)\{ \\
+      int item;\\
+      
+      while(true)\{\\		/* True é a constante 1 */
+	item = produzirItem(); 	/* gera o próximo item */\\ 
+	down(&empty);		/* decresce o contador de empty */\\
+	down(&mutex);		/* entra na região crítica */\\
+	inserirItem(item);	/* ponha um item no buffer */\\
+	up(&mutex);	 	/* o buffer está vazio? */\\
+	up(&full);		/* incrementa o contador de lugares preenchidos */\\
+      \}\\
+    \}\\
+  \end{algorithm}
+\end{frame}
+
+
+%------------------------------------------------------------
+
+\begin{frame}{ O consumidor}
+  \begin{algorithm}[H]
+    
+    void consumer(void)\{ \\
+      int intem; \\
+      
+      while(true)\{\\		/* True é a constante 1 */
+	down(&full);		/* decresce o contador de full */\\
+	down(&mutex);		/* entra na região crítica */\\
+	item = removeItem(); 	/* pega um item do buffer */\\
+	up(&mutex);	 	/* deixa a região crítica */\\
+	up(&empty);		/* incrementa o contador de lugares preenchidos */\\
+	consomeItem(Item);	/* fal algo com um iten */
+      \}\\
+    \}\\
+  \end{algorithm}
+  \pause
+  Qual o problema do algoritmo consumidor -- produtor ??
+\end{frame}
+
+%------------------------------------------------------------------
+
+
+%------------------------------------------------------------------
+
+
+\end{document}

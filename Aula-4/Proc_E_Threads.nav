@@ -1,0 +1,70 @@
+\beamer@endinputifotherversion {3.36pt}
+\headcommand {\slideentry {0}{0}{1}{1/1}{}{0}}
+\headcommand {\beamer@framepages {1}{1}}
+\headcommand {\slideentry {0}{0}{2}{2/2}{}{0}}
+\headcommand {\beamer@framepages {2}{2}}
+\headcommand {\sectionentry {1}{Introdu\c c\~ao}{3}{Introdu\c c\~ao}{0}}
+\headcommand {\beamer@sectionpages {1}{2}}
+\headcommand {\beamer@subsectionpages {1}{2}}
+\headcommand {\beamer@subsectionentry {0}{1}{1}{3}{Introdu\c c\~ao}}\headcommand {\beamer@subsectionpages {3}{2}}
+\headcommand {\slideentry {1}{1}{1}{3/5}{Introdu\c c\~ao}{0}}
+\headcommand {\beamer@framepages {3}{5}}
+\headcommand {\slideentry {1}{1}{2}{6/9}{Introdu\c c\~ao}{0}}
+\headcommand {\beamer@framepages {6}{9}}
+\headcommand {\sectionentry {2}{Processos}{10}{Processos}{0}}
+\headcommand {\beamer@sectionpages {3}{9}}
+\headcommand {\beamer@subsectionpages {3}{9}}
+\headcommand {\beamer@subsectionentry {0}{2}{1}{10}{Modelo}}\headcommand {\beamer@subsectionpages {10}{9}}
+\headcommand {\slideentry {2}{1}{1}{10/14}{Modelo}{0}}
+\headcommand {\beamer@framepages {10}{14}}
+\headcommand {\slideentry {2}{1}{2}{15/16}{Modelo}{0}}
+\headcommand {\beamer@framepages {15}{16}}
+\headcommand {\slideentry {2}{1}{3}{17/20}{Modelo}{0}}
+\headcommand {\beamer@framepages {17}{20}}
+\headcommand {\sectionentry {3}{Exemplo}{21}{Exemplo}{0}}
+\headcommand {\beamer@sectionpages {10}{20}}
+\headcommand {\beamer@subsectionpages {10}{20}}
+\headcommand {\beamer@subsectionentry {0}{3}{1}{21}{O cientista confeiteiro}}\headcommand {\beamer@subsectionpages {21}{20}}
+\headcommand {\slideentry {3}{1}{1}{21/24}{O cientista confeiteiro}{0}}
+\headcommand {\beamer@framepages {21}{24}}
+\headcommand {\slideentry {3}{1}{2}{25/28}{O cientista confeiteiro}{0}}
+\headcommand {\beamer@framepages {25}{28}}
+\headcommand {\sectionentry {4}{Cria\c c\~ao e Termino de Processos}{29}{Cria\c c\~ao e Termino de Processos}{0}}
+\headcommand {\beamer@sectionpages {21}{28}}
+\headcommand {\beamer@subsectionpages {21}{28}}
+\headcommand {\beamer@subsectionentry {0}{4}{1}{29}{Introdu\c c\~ao}}\headcommand {\beamer@subsectionpages {29}{28}}
+\headcommand {\slideentry {4}{1}{1}{29/31}{Introdu\c c\~ao}{0}}
+\headcommand {\beamer@framepages {29}{31}}
+\headcommand {\beamer@subsectionentry {0}{4}{2}{32}{Cria\c c\~ao}}\headcommand {\beamer@subsectionpages {29}{31}}
+\headcommand {\slideentry {4}{2}{1}{32/32}{Cria\c c\~ao}{0}}
+\headcommand {\beamer@framepages {32}{32}}
+\headcommand {\beamer@subsectionentry {0}{4}{3}{33}{Termino}}\headcommand {\beamer@subsectionpages {32}{32}}
+\headcommand {\slideentry {4}{3}{1}{33/33}{Termino}{0}}
+\headcommand {\beamer@framepages {33}{33}}
+\headcommand {\beamer@subsectionentry {0}{4}{4}{34}{Hierarquia de Processos}}\headcommand {\beamer@subsectionpages {33}{33}}
+\headcommand {\slideentry {4}{4}{1}{34/34}{Hierarquia de Processos}{0}}
+\headcommand {\beamer@framepages {34}{34}}
+\headcommand {\beamer@subsectionentry {0}{4}{5}{35}{Concatenando de processos}}\headcommand {\beamer@subsectionpages {34}{34}}
+\headcommand {\slideentry {4}{5}{1}{35/35}{Concatenando de processos}{0}}
+\headcommand {\beamer@framepages {35}{35}}
+\headcommand {\beamer@subsectionentry {0}{4}{6}{36}{Estados de um processo}}\headcommand {\beamer@subsectionpages {35}{35}}
+\headcommand {\slideentry {4}{6}{1}{36/36}{Estados de um processo}{0}}
+\headcommand {\beamer@framepages {36}{36}}
+\headcommand {\slideentry {4}{6}{2}{37/38}{Estados de um processo}{0}}
+\headcommand {\beamer@framepages {37}{38}}
+\headcommand {\sectionentry {5}{Threads}{39}{Threads}{0}}
+\headcommand {\beamer@sectionpages {29}{38}}
+\headcommand {\beamer@subsectionpages {36}{38}}
+\headcommand {\beamer@subsectionentry {0}{5}{1}{39}{Conceito}}\headcommand {\beamer@subsectionpages {39}{38}}
+\headcommand {\slideentry {5}{1}{1}{39/39}{Conceito}{0}}
+\headcommand {\beamer@framepages {39}{39}}
+\headcommand {\slideentry {5}{1}{2}{40/41}{Conceito}{0}}
+\headcommand {\beamer@framepages {40}{41}}
+\headcommand {\beamer@subsectionentry {0}{5}{2}{42}{Trabalho de Pesquisa}}\headcommand {\beamer@subsectionpages {39}{41}}
+\headcommand {\slideentry {5}{2}{1}{42/42}{Trabalho de Pesquisa}{0}}
+\headcommand {\beamer@framepages {42}{42}}
+\headcommand {\beamer@partpages {1}{42}}
+\headcommand {\beamer@subsectionpages {42}{42}}
+\headcommand {\beamer@sectionpages {39}{42}}
+\headcommand {\beamer@documentpages {42}}
+\headcommand {\def \inserttotalframenumber {19}}

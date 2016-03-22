@@ -1,0 +1,172 @@
+\documentclass[11pt]{beamer}
+\usetheme{Warsaw}
+\usepackage[utf8]{inputenc}
+\usepackage[brazil]{babel}  % idioma
+\usepackage{amsmath,amsfonts,amssymb,textcomp}
+\usepackage{graphicx}
+\usepackage{subfigure}
+
+\author{Othon Oliveira}
+\title{Sistemas Operacionais}
+%\setbeamercovered{transparent} 
+%\setbeamertemplate{navigation symbols}{} 
+%\logo{} 
+\institute{Fatec -- Faculdade de Informática --- PE} 
+%\date{} 
+%\subject{} 
+\begin{document}
+
+
+% Capa - requer o TikZ
+\newcommand{\capa}{
+    \begin{tikzpicture}[remember picture,overlay]
+        \node at (current page.south west)
+            {\begin{tikzpicture}[remember picture, overlay]
+                \fill[shading=radial,top color=orange,bottom color=orange,middle color=yellow] (0,0) rectangle (\paperwidth,\paperheight);
+            \end{tikzpicture}
+          };
+    \end{tikzpicture}
+}
+
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+%\begin{frame}
+%\tableofcontents
+%\end{frame}
+
+
+
+%+++++++++++++++++++++++++++++++++++++++++++++++
+\begin{frame}{Threads -- Conceito}
+\begin{figure}[h]
+%\left
+\includegraphics[width=18mm, height=15mm]{Figuras/appleOficial.jpg}
+\qquad \quad \quad \quad \quad
+\includegraphics[width=19mm, height=17mm]{Figuras/windows.png}
+\qquad \quad \quad \quad \quad \quad \quad 	\vspace{1.0in}
+\includegraphics[width=15mm, height=15mm]{Figuras/android.jpg}
+\qquad \quad \quad \quad \quad \quad \quad \quad 
+\includegraphics[width=25mm, height=15mm]{Figuras/ubuntu_904.jpg}
+
+\end{figure}
+\end{frame}
+
+%+++++++++++++++++++++++++++++++++++++++++++++++
+\section{Threads}
+\subsection*{Conceito}
+
+\begin{frame}{Espaço de endereçamento}
+ Em sistemas tradicionais, cada processo tem um espaço de endereçamento e um único Thread (fluxo) de controle.
+ \begin{block}{Definição}
+ 	Isso é quase uma definição de processo, exceto pelo espaço de endereçamento
+ \end{block}
+ Contudo é frequente querer ter múltiplos threads em um único espaço de endereçamento executando em quase-paralelamente, como se fossem processos separados.
+\end{frame}
+
+
+\begin{frame}\frametitle{ Múltiplos processos com múltiplas threads}
+
+\begin{columns}
+
+\begin{column}{0.01cm}
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[height=3.3cm]{Figuras/process-thread1.png}
+%\caption{Estados -- simplificado}
+\end{center}
+
+\end{figure}
+\end{column}
+
+\pause
+
+\begin{column}{0.01cm}
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[height=3.5cm]{Figuras/process-thread3.png}
+%\caption{Máquina de estados finitos -- completo}
+\end{center}
+\end{figure}
+\end{column}
+
+\end{columns}
+Em qual das figuras há multithread ?
+
+\begin{block}
+ Multithread também é usado para descrever múltiplos threds em um único processo
+\end{block}
+
+
+\end{frame}
+
+
+%\subsection*{Trabalho de Pesquisa}
+
+\begin{frame}\frametitle{ Threads de ambiente}
+
+
+\begin{block}{ Independência entre Threads}
+O que as Threads acrescentam ao modelo de processo é permitir que múltiplas execuções ocorram no mesmo ambiente do processo, 
+com um grande grau de independência.
+\end{block}
+Na figura (a) vemos três processos tradicionais. Cada um possui seu próprio espaço de endereçamento e um único thread e controle.
+
+Na figura (b) vemos um único processo com três threads de controle.
+
+Quantos threads há nos dois casos ??
+
+\end{frame}
+
+%+++++++++++++++++++++++++++++++++++++++++++++++
+\begin{frame}\frametitle{ Threads de ambiente}
+
+\begin{block}{ Espaço de endereçamento}
+
+\end{block}
+Na figura (a) cada processo tem seu próprio seu espaço de endereçamento diferente.
+
+Na figura (b) vemos um único processo com três threads de controle.
+
+Quantos threads há nos dois casos ??
+
+\end{frame}
+
+
+%+++++++++++++++++++++++++++++++++++++++++++++++
+
+
+%+++++++++++++++++++++++++++++++++++++++++++++++
+
+
+%+++++++++++++++++++++++++++++++++++++++++++++++
+
+
+%+++++++++++++++++++++++++++++++++++++++++++++++
+
+
+%+++++++++++++++++++++++++++++++++++++++++++++++
+
+
+%+++++++++++++++++++++++++++++++++++++++++++++++
+
+%+++++++++++++++++++++++++++++++++++++++++++++++
+
+%+++++++++++++++++++++++++++++++++++++++++++++++
+
+%+++++++++++++++++++++++++++++++++++++++++++++++
+
+%+++++++++++++++++++++++++++++++++++++++++++++++
+
+%+++++++++++++++++++++++++++++++++++++++++++++++
+
+
+%+++++++++++++++++++++++++++++++++++++++++++++++
+
+%+++++++++++++++++++++++++++++++++++++++++++++++
+
+
+
+\end{document}

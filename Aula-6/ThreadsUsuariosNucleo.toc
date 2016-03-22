@@ -1,0 +1,7 @@
+\beamer@endinputifotherversion {3.36pt}
+\select@language {brazil}
+\beamer@sectionintoc {1}{Threads}{3}{0}{1}
+\beamer@sectionintoc {2}{Implementa\IeC {\c c}\IeC {\~a}o de threads}{13}{0}{2}
+\beamer@sectionintoc {3}{Comunica\IeC {\c c}\IeC {\~a}o entre processos}{22}{0}{3}
+\beamer@subsectionintoc {3}{5}{Exclus\IeC {\~a}o m\IeC {\'u}tua com espera}{37}{0}{3}
+\beamer@subsectionintoc {3}{6}{Dormir e acordar}{47}{0}{3}
