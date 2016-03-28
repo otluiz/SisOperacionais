@@ -1,7 +1,0 @@
-\beamer@endinputifotherversion {3.36pt}
-\select@language {brazil}
-\beamer@sectionintoc {1}{Introdu\c c\~ao}{3}{0}{1}
-\beamer@sectionintoc {2}{Processos}{10}{0}{2}
-\beamer@sectionintoc {3}{Exemplo}{21}{0}{3}
-\beamer@sectionintoc {4}{Cria\c c\~ao e Termino de Processos}{29}{0}{4}
-\beamer@sectionintoc {5}{Threads}{39}{0}{5}

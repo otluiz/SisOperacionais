@@ -1,0 +1,4 @@
+\beamer@endinputifotherversion {3.24pt}
+\select@language {brazil}
+\beamer@sectionintoc {1}{ Gerenciamento de Mem\IeC {\'o}ria}{4}{0}{1}
+\beamer@sectionintoc {2}{ Troca de Processos}{32}{0}{2}

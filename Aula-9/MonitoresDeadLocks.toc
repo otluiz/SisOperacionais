@@ -1,4 +1,0 @@
-\beamer@endinputifotherversion {3.36pt}
-\select@language {brazil}
-\beamer@sectionintoc {1}{ Sem\IeC {\'a}foros}{4}{0}{1}
-\beamer@sectionintoc {2}{ Sem\IeC {\'a}foros}{11}{0}{2}
